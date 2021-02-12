@@ -9,7 +9,7 @@ const teamControlRef = document.querySelector('#theme-switch-toggle');
 teamControlRef.addEventListener('change', changeTheme);
 
 const saveTheme = localStorage.getItem('theme');
-if (saveTheme === JSON.stringify(Theme.LIGHT)) {
+if (saveTheme === Theme.LIGHT) {
   themeLight();
 } else {
   themeDark();
@@ -28,11 +28,11 @@ function changeTheme(event) {
 function themeDark(event) {
   bodyRef.classList.remove(`${Theme.LIGHT}`);
   bodyRef.classList.add(`${Theme.DARK}`);
-  localStorage.setItem('theme', JSON.stringify(Theme.DARK));
+  localStorage.setItem('theme', Theme.DARK);
 }
 
 function themeLight(event) {
   bodyRef.classList.remove(`${Theme.DARK}`);
   bodyRef.classList.add(`${Theme.LIGHT}`);
-  localStorage.setItem('theme', JSON.stringify(Theme.LIGHT));
+  localStorage.setItem('theme', Theme.LIGHT);
 }
